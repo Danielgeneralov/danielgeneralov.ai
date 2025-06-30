@@ -11,31 +11,29 @@ export default function AboutPage() {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-50 to-purple-50 py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="w-40 h-40 mx-auto mb-8 relative">
-              <img
-                src="/profile.png"
-                alt="Daniel Generalov"
-                className="w-full h-full object-cover rounded-full shadow-lg ring-4 ring-white"
-                onError={(e) => {
-                  // Fallback to Brain icon if image fails to load
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = 'none';
-                  const fallback = document.createElement('div');
-                  fallback.className = 'w-full h-full bg-gradient-to-br from-blue-600 to-purple-600 rounded-full flex items-center justify-center';
-                  fallback.innerHTML = '<svg class="h-16 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>';
-                  target.parentNode?.appendChild(fallback);
-                }}
-              />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12 lg:gap-16">
+            {/* Large Profile Image on the Left */}
+            <div className="flex-shrink-0">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 relative">
+                <img
+                  src="/profile.png"
+                  alt="Daniel Generalov"
+                  className="w-full h-full object-cover rounded-full shadow-2xl ring-8 ring-white/50"
+                />
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              About Daniel Generalov
-            </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              AI Researcher and Developer dedicated to advancing the frontiers of artificial intelligence 
-              through rigorous research, open science, and practical applications that benefit humanity.
-            </p>
+            
+            {/* Text Content on the Right */}
+            <div className="flex-1 text-center lg:text-left">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                About Daniel Generalov
+              </h1>
+              <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                AI Researcher and Developer dedicated to advancing the frontiers of artificial intelligence 
+                through rigorous research, open science, and practical applications that benefit humanity.
+              </p>
+            </div>
           </div>
         </div>
       </section>

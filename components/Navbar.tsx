@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Brain, Sparkles } from 'lucide-react'
+import { Menu, X, User, Mail } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Research', href: '/blog' },
-  { name: 'Projects', href: '/projects' },
+  { name: 'Publications', href: '/projects' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -49,20 +49,20 @@ export default function Navbar() {
             <Link href="/" className="flex items-center space-x-3 group">
               <motion.div 
                 className="relative"
-                whileHover={{ rotate: 180 }}
-                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.3 }}
               >
-                <div className="absolute inset-0 bg-blue-500/20 rounded-xl blur-lg scale-110 group-hover:bg-blue-500/30 transition-colors" />
-                <div className="relative bg-gradient-to-br from-blue-600 to-purple-600 p-2 rounded-xl shadow-lg">
-                  <Brain className="h-6 w-6 text-white" />
+                <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-lg scale-110 group-hover:bg-blue-500/30 transition-colors" />
+                <div className="relative bg-gradient-to-br from-blue-600 to-purple-600 p-2.5 rounded-full shadow-lg">
+                  <User className="h-5 w-5 text-white" />
                 </div>
               </motion.div>
               <div className="flex flex-col">
                 <span className="font-bold text-xl bg-gradient-to-r from-gray-900 to-blue-800 bg-clip-text text-transparent">
-                  AI Research
+                  Daniel Generalov
                 </span>
                 <span className="text-xs text-gray-500 font-medium -mt-1">
-                  Frontier
+                  AI Enthusiast
                 </span>
               </div>
             </Link>
@@ -116,8 +116,8 @@ export default function Navbar() {
                   href="/contact"
                   className="inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40"
                 >
-                  <Sparkles className="w-4 h-4 mr-1.5" />
-                  Connect
+                  <Mail className="w-4 h-4 mr-1.5" />
+                  Contact
                 </Link>
               </motion.div>
             </motion.div>
@@ -185,8 +185,8 @@ export default function Navbar() {
                   className="flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl shadow-lg"
                   onClick={() => setIsOpen(false)}
                 >
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Connect
+                  <Mail className="w-4 h-4 mr-2" />
+                  Contact
                 </Link>
               </motion.div>
             </div>
